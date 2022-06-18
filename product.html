@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/product.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="container">
+            <header>
+                <!-- <img src="img/logo.PNG" alt=""> -->
+                <img src="img/IMG_1866.PNG" alt="">
+                <div class="login">
+                    <span>LOGIN</span>
+                </div>
+                <br>
+
+                <div class="search">
+                    <div class="menu-search">
+                        <i class='bx bx-menu'></i>
+                    </div>
+                    <div class="menu-cart">
+                        <a href="https://o1gstgv3kse.typeform.com/to/vJpAiFBp?fbclid=IwAR1256TCnXdnIIMp_W2nETdpN_3ZYKsWNevJgHUhjrWqATg-mPNGmKjkfbk&typeform-source=l.facebook.com"><i class='bx bxs-cart-add'></i></a>
+                         
+                     </div>
+                    <div class="text">
+                        <input type="text" placeholder="Tìm kiếm sản phẩm...">
+                    </div>
+                    <div class="button">
+                        <i class='bx bx-search-alt'></i>
+                        <i class='bx bxs-cart-add'></i>
+                    </div>
+
+                </div>
+            </header>
+            <div class="content">
+                <div class="back" >
+                    <a href="index.html"> <i class='bx bx-arrow-back'></i></a> 
+                    <span> <a href="index.html" style="color: white; text-decoration: none;"> Trang chủ </a>/ All SHOP / DÂY ĐEO </span>
+                </div>
+
+                <section id="Product-show">
+                    <div class="aspect-ratio-169">
+                        <img src="img/vang.jpg" alt="">
+                        <img src="img/cauvong.jpg" alt="">
+                        <img src="img/do.jpg" alt="">
+                        <!-- <img src="" alt=""> -->
+                    </div>
+                    <div class="dot-container">
+                        <div class="dot active"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <!-- <div class="dot"></div> -->
+                    </div>
+                </section>
+                <div class="product-order">
+                    <div class="product-tittle">
+                        <span>Sản phẩm 1</span>
+                    </div>
+                    <div class="product-price" style="color: red;">
+                       50,000 <sup>đ</sup> <span style="color: white"> 59,000 <sup>đ</sup></span>
+                    </div>
+                    <div class="product-button">
+                        <a href="https://o1gstgv3kse.typeform.com/to/vJpAiFBp?fbclid=IwAR1256TCnXdnIIMp_W2nETdpN_3ZYKsWNevJgHUhjrWqATg-mPNGmKjkfbk&typeform-source=l.facebook.com"><button type="submit">Click để mua
+                                hàng</button></a>
+                    </div>
+                    <div class="product-description">
+                        <span style="font-weight: bold; font-size: 20px ;"> Mô tả:</span> <br>
+                        <br>
+                        <span>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi,
+                            ratione! Vero perspiciatis dolores quis ea? Nemo, blanditiis atque. Voluptatum saepe totam
+                            consectetur officia fuga, voluptas voluptates architecto nemo repellendus alias.
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+            <footer>
+                <div class="container-fluid">
+                    <div class="footer">
+                        <div class="line">
+                            <p>ONLINE ONLY</p>
+                            <a href="https://www.facebook.com/xaviauisyou">https://www.facebook.com/xaviauisyou</a> <br>
+                        
+                            <p>Email : Xavia.project@gmail.com</p>
+                            <p>Contact: (+84) 852 539 279 (Ms.Vy)</p>
+                        </div>
+                        <div class="menu-footer">
+                            <ul>
+                                <li><a href="#">Tìm kiếm</a></li>
+                                <li><a href="#">Giới thiệu</a></li>
+                                <li><a href="#">Chính sách đổi trả</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+<script>
+    const imgPosition = document.querySelectorAll(".aspect-ratio-169 img")
+    const imgContainer = document.querySelector('.aspect-ratio-169')
+    const dotItem = document.querySelectorAll(".dot")
+    const imgNumber = imgPosition.length
+    let index = 0
+    imgPosition.forEach(function (image, index) {
+        image.style.left = index * 100 + "%"
+        dotItem[index].addEventListener("click", function () {
+            slide(index)
+        })
+    })
+    function imgSlide() {
+        index++;
+        if (index >= imgNumber) { index = 0 }
+        slide(index)
+
+
+    }
+    function slide(index) {
+        imgContainer.style.left = "-" + index * 100 + "%"
+        const dotActive = document.querySelector('.active')
+        dotActive.classList.remove("active")
+        dotItem[index].classList.add("active")
+    }
+    setInterval(imgSlide, 3000)
+</script>
+
+</html>
